@@ -17,7 +17,6 @@ const multipleNumbers = () => {
     for (let i = 0; i < 4; i++){
         randomNumbersArr.push(Math.floor(Math.random() * 1000)+1)
     }
-    console.log(randomNumbersArr)
     axios
     .get(`${baseURL}/${randomNumbersArr[0]},${randomNumbersArr[1]},${randomNumbersArr[2]},${randomNumbersArr[3]}`)
     .then(response => {
