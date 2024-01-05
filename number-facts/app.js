@@ -3,7 +3,8 @@ const favNum = 2
 const favNumArr = []
 const randomNumbersArr = [] 
 
-// one request for fav number
+// ======================================================================================================//
+
 const FavNumResponse = () => { 
     axios
     .get(`${baseURL}/${favNum}?json`)
@@ -13,9 +14,14 @@ const FavNumResponse = () => {
     .catch(err => console.log(err))
 }
 
+FavNumResponse()
+
+// ======================================================================================================//
+
+
 const multipleNumbers = () => {
     for (let i = 0; i < 4; i++){
-        randomNumbersArr.push(Math.floor(Math.random() * 1000)+1)
+        randomNumbersArr.push(Math.floor(Math.random() * 100)+1)
     }
     axios
     .get(`${baseURL}/${randomNumbersArr[0]},${randomNumbersArr[1]},${randomNumbersArr[2]},${randomNumbersArr[3]}`)
@@ -26,6 +32,11 @@ const multipleNumbers = () => {
     })
     .catch(err => console.log('Error', err))
 }
+
+multipleNumbers()
+
+// ======================================================================================================//
+
 
 function FavNumMultipleFacts() {  
     for (let i = 0; i < 5; i++){
@@ -38,7 +49,4 @@ function FavNumMultipleFacts() {
         .catch(err => console.log(err))
 }
 
-
-FavNumResponse()
-multipleNumbers()
 FavNumMultipleFacts()
